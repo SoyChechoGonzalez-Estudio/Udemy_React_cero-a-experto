@@ -3,7 +3,7 @@ const TodoItem = ({todo, onDeleteTodo, onToggleTodo}) => {
 		<li className='list-group-item d-flex justify-content-between align-items-center'>
 			<span onClick={() => onToggleTodo(todo.id)} className={`${(
 				                                                          todo.done
-			                                                          ) ? 'text-decoration-line-through' : ''}`}>
+			                                                          ) ? 'text-decoration-line-through' : ''}`} aria-label='span'>
 				{todo.description}
 			</span>
 			<button className='btn btn-danger' onClick={() => onDeleteTodo(todo.id)}>

@@ -5,12 +5,7 @@ const MultipleCustomHooks = () => {
 	
 	const {counter, increment} = useCounter(1);
 	const {data, isLoading, hasError} = useFetch(`https://www.breakingbadapi.com/api/quotes/${counter}`);
-	
-	// console.log({data, isLoading, hasError});
-	// console.log(data);
-	
 	const {author, quote} = !!data && data[0];
-	
 	
 	return (
 		<>
@@ -19,7 +14,7 @@ const MultipleCustomHooks = () => {
 			{
 				isLoading
 				? <LoadingQuote />
-				: <Quote quote={quote} author={author} />
+				: <Quote author={author} quote={quote} />
 				
 			}
 			<button
