@@ -4,7 +4,7 @@ import queryString from 'query-string';
 
 import {useForm} from '../../hooks/useForm.js';
 import {HeroCard} from '../components';
-import {getHeroByName} from '../helpers/index.js';
+import {getHeroByName} from '../helpers';
 
 const Search = () => {
 	
@@ -31,18 +31,18 @@ const Search = () => {
 	
 	return (
 		<>
-			<h1>Search</h1>
+			<h1>SearchtTest</h1>
 			<hr />
 			
 			<div className='row'>
 				<div className='col-5'>
 					<h4>Searching...</h4>
 					<hr />
-					<form onSubmit={onSearchSubmit}>
-						<input type='text' placeholder='Search a hero' className='form-control' name='searchText'
+					<form onSubmit={onSearchSubmit} aria-label='form'>
+						<input type='text' placeholder='SearchtTest a hero' className='form-control' name='searchText'
 						       autoComplete='off' value={searchText} onChange={onInputChange} />
 						
-						<button className='btn btn-outline-primary mt-1'>Search</button>
+						<button className='btn btn-outline-primary mt-1'>SearchtTest</button>
 					</form>
 				</div>
 				
@@ -52,7 +52,7 @@ const Search = () => {
 					
 					{/* 	{
 					 (q === '')
-					 ? <div className='alert alert-primary'>Search a hero</div>
+					 ? <div className='alert alert-primary'>SearchtTest a hero</div>
 					 : (heroes.length === 0) &&
 					 <div className='alert alert-danger'>Sorry!! I don´t have the hero with name <strong>{q}</strong></div>
 					 }
@@ -60,7 +60,7 @@ const Search = () => {
 					<div className='alert alert-primary animate__animated animate__fadeInLeft'
 					     style={{display: showSearch ? '' : 'none'}}>Search a hero
 					</div>
-					<div className='alert alert-danger animate__animated animate__fadeInLeft'
+					<div aria-label='alert-danger' className='alert alert-danger animate__animated animate__fadeInLeft'
 					     style={{display: showError ? '' : 'none'}}>Sorry!! I don´t have the hero
 					                                                with name <strong>{q}</strong>
 					</div>
