@@ -16,8 +16,6 @@ const getPokemon = (page = 0) => {
 				page:    page + 1
 			}
 		));
-		
-		
 	};
 };
 
